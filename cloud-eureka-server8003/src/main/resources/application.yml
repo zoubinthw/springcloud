@@ -12,4 +12,5 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://eureka8004.com:8004/eureka/     # eureka集群相互注册，相互守望
+      defaultZone: http://eureka8003.com:8003/eureka,http://eureka8004.com:8004/eureka  # 集群版
+#      defaultZone: http://eureka8004.com:8004/eureka/     # eureka集群相互注册，相互守望
