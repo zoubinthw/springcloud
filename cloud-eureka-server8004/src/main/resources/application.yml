@@ -1,0 +1,15 @@
+server:
+  port: 8004
+
+spring:
+  application:
+    name: cloud-eureka-server8004
+
+eureka:
+  instance:
+    hostname: eureka8004.com    # 虽然是单机，但是我们通过修改hosts文件，假设有多台机器，用端口模拟多台机器
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka8003.com:8003/eureka/     # eureka集群相互注册，相互守望
