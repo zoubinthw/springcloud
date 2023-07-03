@@ -1,10 +1,9 @@
 package com.atguigu.springcloud.controller;
 
-import com.atguigu.springcloud.entities.CommonResult;
-import com.atguigu.springcloud.entities.Payment;
+import com.atguigu.springcloud.common.entyties.CommonResult;
+import com.atguigu.springcloud.common.entyties.Payment;
 import com.atguigu.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;

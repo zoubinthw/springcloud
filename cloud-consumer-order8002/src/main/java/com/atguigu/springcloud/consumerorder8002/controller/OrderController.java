@@ -1,7 +1,7 @@
 package com.atguigu.springcloud.consumerorder8002.controller;
 
-import com.atguigu.springcloud.consumerorder8002.entity.CommonResult;
-import com.atguigu.springcloud.consumerorder8002.entity.Payment;
+import com.atguigu.springcloud.common.entyties.CommonResult;
+import com.atguigu.springcloud.common.entyties.Payment;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
