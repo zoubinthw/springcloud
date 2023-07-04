@@ -17,6 +17,8 @@
         <module>cloud-api-common</module>
         <module>cloud-eureka-server8003</module>
         <module>cloud-eureka-server8004</module>
+        <module>cloud-provider-payment8006-zookeeper</module>
+        <module>cloud-provider-payment8007-zookeeper</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
