@@ -18,6 +18,7 @@
         <module>cloud-consumer-order8009-consul</module>
         <module>cloud-consumer-order8010-feign</module>
         <module>cloud-consumer-order8012-hystrix</module>
+        <module>cloud-consumer-hystrix-dashboard8013</module>
         <module>cloud-api-common</module>
         <module>cloud-eureka-server8003</module>
         <module>cloud-eureka-server8004</module>
