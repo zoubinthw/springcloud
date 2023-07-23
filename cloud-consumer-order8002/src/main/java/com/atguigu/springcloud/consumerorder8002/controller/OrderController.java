@@ -4,6 +4,7 @@ import com.atguigu.springcloud.consumerorder8002.lb.CustomerLoadBalance;
 import com.atguigu.springcloud.entities.CommonResult;
 import com.atguigu.springcloud.entities.Payment;
 import lombok.extern.slf4j.Slf4j;
+import org.omg.CORBA.BAD_CONTEXT;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.ResponseEntity;
@@ -64,5 +65,11 @@ public class OrderController {
         ServiceInstance serviceInstance = loadBalance.instances(instances);
         URI uri = serviceInstance.getUri();
         return restTemplate.getForObject(uri + "/payment/lb", String.class);
+    }
+
+    @GetMapping("/consumer/payment/zipkin")
+    public String paymentZipkin()
+    {
+        return restTemplate.getForObject("http://localhost:8001" +"/payment/zipkin/", String.class);
     }
 }
