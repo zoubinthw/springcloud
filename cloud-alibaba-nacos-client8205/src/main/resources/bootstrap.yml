@@ -14,3 +14,5 @@ spring:
         file-extension: yaml #指定yaml格式的配置
         group: TEST_GROUP   # 分组配置
         namespace: 807b830e-29cd-4f8a-bd96-df1b5c584f31
+
+#        ps -ef | grep nacos | grep -v grep | wc -l
