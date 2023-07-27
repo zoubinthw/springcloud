@@ -1,0 +1,16 @@
+server:
+  port: 8501
+
+spring:
+  application:
+    name: nacos-payment-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://172.19.0.6:1111/ #配置Nacos地址
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
