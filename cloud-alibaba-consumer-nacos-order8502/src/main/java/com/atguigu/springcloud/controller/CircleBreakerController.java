@@ -25,7 +25,9 @@ public class CircleBreakerController {
 //    @SentinelResource(value = "fallback") // 什么都不配置，面对异常直接页面报错
 //    @SentinelResource(value = "fallback", fallback = "handlerFallback")
 //    @SentinelResource(value = "fallback",blockHandler = "blockHandler") //blockHandler负责在sentinel里面配置的降级限流
-    @SentinelResource(value = "fallback",fallback = "handlerFallback",blockHandler = "blockHandler")
+    @SentinelResource(value = "fallback",
+            fallback = "handlerFallback",blockHandler = "blockHandler",
+            exceptionsToIgnore = {IllegalArgumentException.class}) // 可忽略异常, 不走fullback
     public CommonResult<Payment> fallback(@PathVariable Long id)
     {
         CommonResult<Payment> result = restTemplate.getForObject(SERVICE_URL + "/paymentSQL/"+id,CommonResult.class,id);
