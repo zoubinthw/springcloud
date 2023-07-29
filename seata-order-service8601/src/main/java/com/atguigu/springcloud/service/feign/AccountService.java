@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.math.BigDecimal;
 
-@FeignClient(value = "seata-storage-service")
+@FeignClient(value = "seata-account-service")
 public interface AccountService {
     /**
-     * 扣减库存
+     * 扣减账户余额
      */
-    @PostMapping(value = "/storage/decrease")
-    CommonResult decrease(@RequestParam("productId") Long productId, @RequestParam("count") BigDecimal count);
+    @PostMapping("/account/decrease")
+    CommonResult decrease(@RequestParam("userId") Long userId, @RequestParam("money") BigDecimal money);
 }

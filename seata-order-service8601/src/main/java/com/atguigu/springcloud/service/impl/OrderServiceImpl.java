@@ -10,7 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.math.BigDecimal;
 
 
 @Service
@@ -32,16 +31,16 @@ public class OrderServiceImpl implements OrderService {
         orderDao.create(order);
 
         //远程调用库存服务扣减库存
-        log.info("------->order-service中扣减库存开始");
-        storageService.decrease(order.getProductId(), BigDecimal.valueOf(order.getCount()));
+        log.info("------->order-service中扣减库存开始, 做扣减count: " + order.getCount());
+        storageService.decrease(order.getProductId(), order.getCount());
         log.info("------->order-service中扣减库存结束");
 
         //远程调用账户服务扣减余额
-        log.info("------->order-service中扣减余额开始");
+        log.info("------->order-service中扣减余额开始,做扣减money: " + order.getMoney());
         accountService.decrease(order.getUserId(),order.getMoney());
         log.info("------->order-service中扣减余额结束");
 
-        //修改订单状态为已完成
+        //修改订单状态为1: 已完成
         log.info("------->order-service中修改订单状态开始");
         orderDao.update(order.getUserId(),0);
         log.info("------->order-service中修改订单状态结束");
