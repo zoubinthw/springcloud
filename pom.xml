@@ -42,6 +42,7 @@
         <module>cloud-alibaba-provider-payment8501</module>
         <module>cloud-alibaba-consumer-nacos-order8502</module>
         <module>cloud-alibaba-consumer-nacos-order-feign8503</module>
+        <module>seata-order-service8601</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
