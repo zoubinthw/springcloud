@@ -44,6 +44,7 @@
         <module>cloud-alibaba-consumer-nacos-order-feign8503</module>
         <module>seata-order-service8601</module>
         <module>seata-storage-service8602</module>
+        <module>seata-account-service8603</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
